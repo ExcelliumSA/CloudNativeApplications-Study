@@ -23,7 +23,7 @@ spec:
       app: my-app1
   jwtRules:
   - issuer: "excellium-ias"
-    jwksUri: "https://raw.githubusercontent.com/righettod/toolbox-pentest-web/master/misc/rsa-2048-public.jwks.json"
+    jwksUri: "https://raw.githubusercontent.com/ExcelliumSA/CloudNativeApplications-Study/main/poc/rsa-2048-public.jwks.json"
 ---
 apiVersion: security.istio.io/v1
 kind: RequestAuthentication
@@ -36,7 +36,7 @@ spec:
       app: my-app2
   jwtRules:
   - issuer: "excellium-ias"
-    jwksUri: "https://raw.githubusercontent.com/righettod/toolbox-pentest-web/master/misc/rsa-2048-public.jwks.json"
+    jwksUri: "https://raw.githubusercontent.com/ExcelliumSA/CloudNativeApplications-Study/main/poc/rsa-2048-public.jwks.json"
 ---    
 # Authorization rule
 apiVersion: security.istio.io/v1

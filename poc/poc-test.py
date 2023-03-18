@@ -3,7 +3,7 @@ import requests
 from datetime import timezone, datetime, timedelta
 from jwt import PyJWKClient
 
-JWKS_URL_PRIVATE_KEY = "https://raw.githubusercontent.com/righettod/toolbox-pentest-web/master/misc/rsa-2048-private.jwks.json"
+JWKS_URL_PRIVATE_KEY = "https://raw.githubusercontent.com/ExcelliumSA/CloudNativeApplications-Study/main/poc/rsa-2048-private.jwks.json"
 KID = "d9da12e6-1bdf-4500-84a8-c77e6dd58b76"
 BASE_URL = "http://192.168.49.2"
 ISSUER = "excellium-ias"

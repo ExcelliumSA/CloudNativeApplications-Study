@@ -1,0 +1,78 @@
+######################################################################
+# Learn how to to create a an access rule with Istio
+# from the command line with 'kubectl' and a complete YAML descriptor
+######################################################################
+## !!!! Do not edit the file with VSCode because the formatter break the YAML structure !!!!
+## Use JWT feature provided by Istio.
+## References used:
+### https://istio.io/latest/docs/reference/config/security/request_authentication/
+### https://istio.io/latest/docs/tasks/security/authorization/authz-jwt/
+### https://istio.io/latest/docs/reference/config/security/jwt/
+## Documentation used:
+### Clarification between AuthorizationPolicy and RequestAuthentication rules: https://stackoverflow.com/a/62417272
+### https://istiobyexample.dev/jwt/
+# Authentication rules
+apiVersion: security.istio.io/v1
+kind: RequestAuthentication
+metadata:
+  name: "my-app1-authenticationrule"
+  namespace: my-poc
+spec:
+  selector:
+    matchLabels:
+      app: my-app1
+  jwtRules:
+  - issuer: "excellium-ias"
+    jwksUri: "https://raw.githubusercontent.com/righettod/toolbox-pentest-web/master/misc/rsa-2048-public.jwks.json"
+---
+apiVersion: security.istio.io/v1
+kind: RequestAuthentication
+metadata:
+  name: "my-app2-authenticationrule"
+  namespace: my-poc
+spec:
+  selector:
+    matchLabels:
+      app: my-app2
+  jwtRules:
+  - issuer: "excellium-ias"
+    jwksUri: "https://raw.githubusercontent.com/righettod/toolbox-pentest-web/master/misc/rsa-2048-public.jwks.json"
+---    
+# Authorization rule
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: "my-app1-authorizationrule"
+  namespace: my-poc
+spec:
+  selector:
+    matchLabels:
+      app: my-app1
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        requestPrincipals: ["*"]  
+    when:
+    - key: request.auth.audiences
+      values: ["app1"]
+---
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: "my-app2-authorizationrule"
+  namespace: my-poc
+spec:
+  selector:
+    matchLabels:
+      app: my-app2
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        requestPrincipals: ["*"]  
+    when:
+    - key: request.auth.audiences
+      values: ["app2"]
+    - key: request.auth.claims[ispartner]
+      values: ["Yes"]

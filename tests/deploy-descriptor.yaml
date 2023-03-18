@@ -1,0 +1,42 @@
+######################################################################
+# Learn how to to create a deployment and a service 
+# from the command line with 'kubectl' and a complete YAML descriptor
+######################################################################
+### Deployment
+### https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+  labels:
+    app: my-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: 'kicbase/echo-server:latest'
+        ports:
+          - containerPort: 8080
+---
+### Service
+### https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+  labels:
+    app: my-app
+spec:
+  type: NodePort
+  selector:
+    app: my-app
+  ports:
+    - port: 8080

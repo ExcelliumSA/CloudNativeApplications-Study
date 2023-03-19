@@ -35,7 +35,7 @@ During this study, I take the opportunity to discover the following technology t
 
 🧪 The [test](tests/) folder contains learning content created/tried before the creation of the POC.
 
-🔑 The keypair (RSA 248 bits) used for the lab (JWT token signature) is defined in the following files:
+🔑 The keypair (RSA 2048 bits) used for the lab (JWT token signature) is defined in the following files:
 
 * [Private key](poc/rsa-2048-private.jwks.json).
 * [Public key](poc/rsa-2048-public.jwks.json).

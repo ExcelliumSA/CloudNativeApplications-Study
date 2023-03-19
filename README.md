@@ -10,7 +10,7 @@ Contains the materials used for the blog post about [Cloud Native Applications](
 
 ## Context
 
-During this study, I take the opportunity to discover the following technology to apply concepts learned:
+During this study, I take the opportunity to discover the following technology to apply any concepts learned:
 
 * [Kubernetes](https://kubernetes.io/): I used [Minikube](https://minikube.sigs.k8s.io/docs/) for this.
 * [Istio](https://istio.io/)
@@ -18,6 +18,8 @@ During this study, I take the opportunity to discover the following technology t
 ## Environment
 
 > **Note**: A [Ubuntu 22.04.2 LTS Server](https://ubuntu.com/download/server) VM was used for the OS of the Kubernetes cluster single node.
+
+> **Warning**: 🚨 Do not edit the file **[poc-accessrules.yaml](poc/poc-accessrules.yaml)** with VSCode because the formatter break the YAML structure!
 
 💬 [Minikube](https://minikube.sigs.k8s.io/docs/) and [Istio](https://istio.io/) were installed using their documentation.
 
@@ -32,6 +34,11 @@ During this study, I take the opportunity to discover the following technology t
 📦 The image [ealen/echo-server](https://hub.docker.com/r/ealen/echo-server) was used for the application of the POC.
 
 🧪 The [test](tests/) folder contains learning content created/tried before the creation of the POC.
+
+🔑 The keypair (RSA 248 bits) used for the lab (JWT token signature) is defined in the following files:
+
+* [Private key](poc/rsa-2048-private.jwks.json).
+* [Public key](poc/rsa-2048-public.jwks.json).
 
 # Useful commands oftenly used
 

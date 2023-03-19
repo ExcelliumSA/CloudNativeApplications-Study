@@ -19,7 +19,7 @@ During this study, I take the opportunity to discover the following technology t
 
 > **Note**: A [Ubuntu 22.04.2 LTS Server](https://ubuntu.com/download/server) VM was used for the OS of the Kubernetes cluster single node.
 
-> **Warning**: 🚨 Do not edit the file **[poc-accessrules.yaml](poc/poc-accessrules.yaml)** with VSCode because the formatter break the YAML structure!
+> **Warning**: 🚨 Do not edit the file **[poc-accessrules.yaml](poc/poc-accessrules.yaml)** with Visual Studio Code because the formatter break the YAML structure!
 
 💻 A Visual Studio Code [workspace file](prj.code-workspace) is provided.
 

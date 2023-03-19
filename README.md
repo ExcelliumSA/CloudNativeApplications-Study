@@ -23,15 +23,15 @@ During this study, I take the opportunity to discover the following technology t
 
 💬 [Minikube](https://minikube.sigs.k8s.io/docs/) and [Istio](https://istio.io/) were installed using their documentation.
 
-📑 Once the VM is ready, the following script can be used:
+📑 Once the VM is ready (Minikube and Istio are installed), the following script can be used:
 
 * [env-addtools.sh](env-addtools.sh): Add tools used by the POC.
 * [env-start.sh](env-start.sh): Start the Minikute instance and POC requirements (*this script hang so open it in a dedicated shell*)
 * [env-shutdown.sh](env-shutdown.sh): Stop the Minikute instance and shutdown the VM in a clean way.
 
-📦 The lab content in stored in the [poc](poc/) folder.
+📦 The lab content is stored in the [poc](poc/) folder.
 
-📦 The image [ealen/echo-server](https://hub.docker.com/r/ealen/echo-server) was used for the application of the POC.
+📦 The image [ealen/echo-server](https://hub.docker.com/r/ealen/echo-server) is used for the application of the POC.
 
 🧪 The [test](tests/) folder contains learning content created/tried before the creation of the POC.
 

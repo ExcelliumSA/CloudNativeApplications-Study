@@ -21,6 +21,8 @@ During this study, I take the opportunity to discover the following technology t
 
 > **Warning**: 🚨 Do not edit the file **[poc-accessrules.yaml](poc/poc-accessrules.yaml)** with VSCode because the formatter break the YAML structure!
 
+💻 A Visual Studio Code [workspace file](prj.code-workspace) is provided.
+
 💬 [Minikube](https://minikube.sigs.k8s.io/docs/) and [Istio](https://istio.io/) were installed using their documentation.
 
 📑 Once the VM is ready (Minikube and Istio are installed), the following script can be used:

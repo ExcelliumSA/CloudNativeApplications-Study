@@ -1,0 +1,24 @@
+######################################################################
+# Learn how to to create a an access rule with Istio
+# from the command line with 'kubectl' and a complete YAML descriptor
+######################################################################
+## !!!! Do not edit the file with VSCode because the formatter break the YAML structure !!!!
+## Use HTTP Traffic feature provided by Istio.
+## References used:
+### https://istio.io/latest/docs/tasks/security/authorization/authz-http/
+### https://istio.io/latest/docs/reference/config/security/authorization-policy/
+# Authorization rules
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: "my-app1-authorizationrule"
+  namespace: my-extra01
+spec:
+  selector:
+    matchLabels:
+      app: my-app1
+  action: ALLOW
+  rules:
+  - to:
+    - operation:
+        methods: ["GET", "POST"]

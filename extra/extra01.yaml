@@ -1,0 +1,66 @@
+######################################################################
+# Learn how to to create a deployment and a service
+# from the command line with 'kubectl' and a complete YAML descriptor
+######################################################################
+## App 1
+### Deployment
+### https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app1-deployment
+  namespace: my-extra01
+  labels:
+    app: my-app1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app1
+  template:
+    metadata:
+      labels:
+        app: my-app1
+    spec:
+      containers:
+        - name: my-app1
+          image: "kicbase/echo-server:latest"
+          ports:
+            - containerPort: 8080
+---
+### Service
+### https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app1-service
+  namespace: my-extra01
+  labels:
+    app: my-app1
+spec:
+  type: NodePort
+  selector:
+    app: my-app1
+  ports:
+    - port: 8080
+---
+### Ingress
+### https://kubernetes.io/docs/concepts/services-networking/ingress/
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-app-ingress
+  namespace: my-extra01
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /app1
+            backend:
+              service:
+                name: my-app1-service
+                port:
+                  number: 8080
+---
+

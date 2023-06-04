@@ -74,6 +74,7 @@ kubectl logs deployment/my-app1-deployment --namespace=my-poc -c istio-proxy
 * <https://istio.io/latest/docs/reference/config/security/jwt/>
 * <https://stackoverflow.com/a/62417272>
 * <https://istiobyexample.dev/jwt/>
+* <https://developers.redhat.com/blog/2020/04/08/why-kubernetes-native-instead-of-cloud-native>
 
 # Tools
 

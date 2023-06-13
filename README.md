@@ -4,7 +4,7 @@ Contains the materials used for the blog post about [Cloud Native Applications](
 
 # Blog post link
 
-🚧 Work in progress...
+📡 Publishing pending...
 
 # Lab
 

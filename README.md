@@ -4,7 +4,7 @@ Contains the materials used for the blog post about [Cloud Native Applications](
 
 # Blog post link
 
-📡 Publishing pending...
+https://excellium-services.com/2023/06/21/discovery-of-cloud-native-applications-from-an-application-security-perspective/
 
 # Lab
 
